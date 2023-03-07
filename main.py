@@ -1,4 +1,5 @@
 import sys
+import ast
 from analyzer.style_errors.long_line_error import LongLine
 from analyzer.style_errors.to_do_error import ToDo
 from analyzer.style_errors.indent_error import Indent
