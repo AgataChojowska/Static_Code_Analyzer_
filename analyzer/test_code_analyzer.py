@@ -1,3 +1,5 @@
+import pathlib
+
 import pytest
 import ast
 from analyzer.style_errors.long_line_error import LongLine
@@ -260,7 +262,7 @@ class TestArgumentName:
 
     def test_check_one_error(self):
         an = ArgumentName()
-        _path = "./Test_Files/class_10/class_10_one_error.py"
+        _path = f"{pathlib.Path(__file__).parent}/Test_Files/class_10/class_10_one_error.py"
         with open(_path, 'r', encoding='UTF-8') as file:
             tree = ast.parse(file.read())
         result = an.check(_path, tree)
@@ -269,7 +271,7 @@ class TestArgumentName:
 
     def test_check_multiple_errors(self):
         an = ArgumentName()
-        _path = "./Test_Files/class_10/class_10_multiple_errors.py"
+        _path = f"{pathlib.Path(__file__).parent}/Test_Files/class_10/class_10_multiple_errors.py"
         with open(_path, 'r', encoding='UTF-8') as file:
             tree = ast.parse(file.read())
         result = an.check(_path, tree)
@@ -284,7 +286,7 @@ class TestArgumentName:
 
     def test_check_no_errors(self):
         an = ArgumentName()
-        _path = "./Test_Files/class_10/class_10_no_errors.py"
+        _path = f"{pathlib.Path(__file__).parent}/Test_Files/class_10/class_10_no_errors.py"
         with open(_path, 'r', encoding='UTF-8') as file:
             tree = ast.parse(file.read())
         result = an.check(_path, tree)
@@ -295,7 +297,7 @@ class TestVariableName:
 
     def test_check_one_error(self):
         vn = VariableName()
-        _path = "./Test_Files/class_11/class_11_one_error.py"
+        _path = f"{pathlib.Path(__file__).parent}/Test_Files/class_11/class_11_one_error.py"
         with open(_path, 'r', encoding='UTF-8') as file:
             tree = ast.parse(file.read())
         result = vn.check(_path, tree)
@@ -304,7 +306,7 @@ class TestVariableName:
 
     def test_check_multiple_errors(self):
         vn = VariableName()
-        _path = "./Test_Files/class_11/class_11_multiple_errors.py"
+        _path = f"{pathlib.Path(__file__).parent}/Test_Files/class_11/class_11_multiple_errors.py"
         with open(_path, 'r', encoding='UTF-8') as file:
             tree = ast.parse(file.read())
         result = vn.check(_path, tree)
@@ -316,7 +318,7 @@ class TestVariableName:
 
     def test_check_no_errors(self):
         vn = VariableName()
-        _path = "./Test_Files/class_11/class_11_no_errors.py"
+        _path = f"{pathlib.Path(__file__).parent}/Test_Files/class_11/class_11_no_errors.py"
         with open(_path, 'r', encoding='UTF-8') as file:
             tree = ast.parse(file.read())
         result = vn.check(_path, tree)
@@ -327,7 +329,7 @@ class TestDefaultArgument:
 
     def test_check_one_error(self):
         da = DefaultArgument()
-        _path = "./Test_Files/class_12/class_12_one_error.py"
+        _path = f"{pathlib.Path(__file__).parent}/Test_Files/class_12/class_12_one_error.py"
         with open(_path, 'r', encoding='UTF-8') as file:
             tree = ast.parse(file.read())
         result = da.check(_path, tree)
@@ -336,7 +338,7 @@ class TestDefaultArgument:
 
     def test_check_multiple_errors(self):
         da = DefaultArgument()
-        _path = "./Test_Files/class_12/class_12_multiple_errors.py"
+        _path = f"{pathlib.Path(__file__).parent}/Test_Files/class_12/class_12_multiple_errors.py"
         with open(_path, 'r', encoding='UTF-8') as file:
             tree = ast.parse(file.read())
         result = da.check(_path, tree)
@@ -348,7 +350,7 @@ class TestDefaultArgument:
 
     def test_check_no_errors(self):
         da = DefaultArgument()
-        _path = "./Test_Files/class_12/class_12_no_errors.py"
+        _path = f"{pathlib.Path(__file__).parent}/Test_Files/class_12/class_12_no_errors.py"
         with open(_path, 'r', encoding='UTF-8') as file:
             tree = ast.parse(file.read())
         result = da.check(_path, tree)
